@@ -45,15 +45,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Week3Revature_part2 {
-    public static String mergeTwoLists(LinkedList<Integer> list1, LinkedList<Integer> list2) {
+    public static String mergeTwoLists(LinkedList<Integer>[] listArr) {
         LinkedList<Integer> result = new LinkedList<>();
-        for (Integer i : list1) {
-            result.add(i);
+        for (LinkedList<Integer> list : listArr) {
+            for (Integer i : list) {
+                result.add(i);
+            }
         }
 
-        for (Integer j : list2) {
-            result.add(j);
-        }
         Collections.sort(result);
         return result.toString();
     }
